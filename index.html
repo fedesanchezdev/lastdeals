@@ -8,6 +8,20 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <title>JSON API</title>
+    <style>
+        .imgDimensiones {
+            height: 220px;
+        }
+        .descuento {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgb(255, 225, 0);
+            padding: 2px 5px;
+            border-radius: 3px;
+
+        }
+    </style>
 </head>
 
 <body>
@@ -16,7 +30,7 @@
         <h3 class="mt-5">Buscar por hotel o ciudad</h3>
         <input type="text" id="searchInput" onkeyup="search()" placeholder="ingrese 3 o más letras">
 
-        <div id="cardContainer" class="row mt-4"></div>
+        <div id="cardContainer" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mt-4"></div>
     </div>
 
     <script src="./javascript.js"></script>
