@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <title>JSON API</title>
+</head>
+
+<body>
+    <div class="container">
+        <h3 class="mt-5">Buscar por hotel o ciudad</h3>
+        <input type="text" id="searchInput" onkeyup="search()" placeholder="ingrese 3 o más letras">
+
+        <div id="cardContainer" class="row mt-4"></div>
+    </div>
+
+    <script>
+        function search() {
+            const searchTerm = document.getElementById("searchInput").value.trim().toLowerCase();
+            const cardContainer = document.getElementById("cardContainer");
+            cardContainer.innerHTML = '';
+
+            if (searchTerm.length < 3) {
+                // El campo de búsqueda está vacío, no mostramos ninguna tarjeta
+                return;
+            }
+
+            hoteles.forEach(hotel => {
+                if (hotel.ciudad.toLowerCase().includes(searchTerm) || hotel.hotel.toLowerCase().includes(searchTerm))
+                // if (unorm.nfd(item.name.toLowerCase()).replace(/[\u0300-\u036f]/g, '').includes(unorm.nfd(searchTerm).replace(/[\u0300-\u036f]/g, '')) ||
+                // unorm.nfd(item.description.toLowerCase()).replace(/[\u0300-\u036f]/g, '').includes(unorm.nfd(searchTerm).replace(/[\u0300-\u036f]/g, '')))
+                {
+                    const card = `
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="${hotel.imagen}"></img>
+                            <h5 class="card-title">${hotel.hotel}</h5>
+                            <p class="card-text">${hotel.descuento}</p>
+                            <p class="card-text">${hotel.ciudad}</p>
+                            <p class="card-text">${hotel.puntaje}</p>
+                            <p class="card-text">${hotel.evaluaciones}</p>
+                            <p class="card-text">${hotel.fechas}</p>
+                            <p class="card-text">${hotel.precio}</p>
+                            <p class="card-text">${hotel.porNoche}</p>
+                            <a href="${hotel.link}" target="_blank">Link</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+                    cardContainer.innerHTML += card;
+                }
+            });
+        }
+    </script>
+    <script src="./json.js"></script>
+</body>
+
+</html>
