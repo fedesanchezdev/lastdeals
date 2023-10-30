@@ -58,13 +58,13 @@ function showRandomHotels() {
             <p class="card-text fs-6"><small><strong>${hotel.puntaje}</strong> ${hotel.evaluaciones}</small></p>
             <h5 class="card-title fs-6 fw-bold"><small>${hotel.hotel}</small></h5>
             <p class="card-text fw-semibold fs-6"><small>${hotel.ciudad}</small></p>
-            </div>
-            <div class="card-footer text-center rounded-bottom-4 border">
             <p class="card-text fs-6"><small>
               ${lowestPriceText === precio2 ? "<strong>" + precio2 + "</strong>" : "<small><strike>" + precio2 + "</strike></small>"}
               ${lowestPriceText === precio1 ? "<strong>" + precio1 + "</strong>" : "<small><strike>" + precio1 + "</strike></small>"}
               <small>${hotel.porNoche}<br><small>${hotel.fechas}</small></small></small>
             </p>
+          </div>
+          <div class="card-footer text-center rounded-bottom-4 border">
             <small class="text-body-secondary"><a href="" target="_blank"></a></small>
             <small><button class="px-3" onclick="copyCardText(this)">Copiar y Reservar</button></small>
           </div>
@@ -140,11 +140,11 @@ function search() {
                             <p class="card-text fs-6"><strong>${hotel.puntaje}</strong> ${hotel.evaluaciones}</p>
                             <h5 class="card-title fs-6 fw-bold">${hotel.hotel}</h5>
                             <p class="card-text fw-semibold fs-6">${hotel.ciudad}</p>
-                            </div>
-                            <div class="card-footer text-center rounded-bottom-4 border">
                             <p class="card-text fs-4">${lowestPriceText === precio2 ? "<strong>" + precio2 + "</strong>" : "<small><small><strike>" + precio2 + "</strike></small></small>"} 
                             ${lowestPriceText === precio1 ? "<strong>" + precio1 + "</strong>" : "<small><small><strike>" + precio1 + "</strike></small></small>"} <small>${hotel.porNoche}<br><small>${hotel.fechas}</small></small></p>
-                            <button class="px-4" onclick="copyCardText(this)">Copiar y Reservar</button><br>
+                        </div>
+                        <div class="card-footer text-center rounded-bottom-4 border">
+                          <button class="px-4" onclick="copyCardText(this)">Copiar y Reservar</button><br>
                         </div>
                     </div>
                 </div>
@@ -156,7 +156,7 @@ function search() {
 
 function copyCardText(button) {
   const card = button.closest(".card");
-  const cardBody = card.querySelector(".card-body");
+  const cardBody = card.querySelector(".card-body", ".card-footer");
   const cardText = cardBody.innerText;
 
   // Copia el texto al portapapeles
