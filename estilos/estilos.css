@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+
+
+/* NAVBAR */
+.nav-link {
+    color: #2B588D;
+}
+
+.nav-link:hover {
+    font-weight: 700;
+}
+
+ul {
+    font-size: calc(0.8rem + 0.3vw);
+}
+
+.marca {
+    width: 200px;
+}
+
+
+/* GENERAL */
+.contenedordepagina {
+    max-width: 960px;
+    width: 90%;
+    margin: 0px auto;
+}
+
+/* PORTADAS */
+.portada {
+    position: relative;
+}
+
+.portada img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    font-size: calc(1rem + 4.5vw);
+    font-weight: 800;
+    color: #FFFFFF;
+    font-family: 'Encode Sans Condensed', sans-serif;
+    text-shadow: 2px 2px 2px #333;
+}
+
+.portada span {
+    font-family: 'Ms Madi', cursive;
+    font-size: calc(1.5rem + 5.5vw);
+    color: #FFFFFF;
+    font-weight: 300;
+    margin: 0px 10px;
+}
+
+/* GENERAL */
+h2 {
+    font-size: calc(1rem + 1.3vw);
+    font-weight: 600;
+    color: #2B588D;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: calc(0.8rem + .7vw);
+    font-weight: 800;
+    color: #4DC6C5;
+    margin: 40px 0px;
+}
+
+h4 {
+    font-size: calc(1.5rem + 1.7vw);
+    color: #ffffff;
+    margin-bottom: 0;
+    font-family: 'Ms Madi', cursiva;
+    background-color: #4DC6C5;
+    padding: 40px 20px;
+}
+
+h5 {
+    font-size: calc(.8rem + 1.2vw);
+    font-weight: 800;
+    color: #fff;
+    margin: 20px 0;
+}
+
+p {
+    font-size: calc(0.8rem + 0.2vw);
+}
+
+
+
+/* BOTONES */
+.boton-presupuesto {
+    font-size: calc(0.8rem + .7vw);
+    color: #fff;
+    background-color: #2B588D;
+}
+
+.boton-presupuesto:hover {
+    background-color: #4DC6C5;
+}
+
+/* FONDOS DE PAGINAS */
+.fondo-ventas {
+    background: url(../img/fondo-ventas.jpg) no-repeat top center;
+    background-size: cover;
+}
+
+.fondo-conocenos {
+    background: url(../img/fondo-conocenos.jpg) no-repeat top center;
+    background-size: cover;
+}
+
+.conocenos {
+    background-color: #667C98;
+    padding: 40px;
+}
+
+.conocenos p {
+    color: #fff;
+}
+
+.fondo-contacto {
+    background: url(../img/fondo-contacto.jpg) no-repeat top center;
+    background-size: cover;
+}
+
+.fondo-contacto ul {
+    list-style: none;
+}
+
+.fondo-contacto li {
+    font-weight: 700;
+}
+
+
+/* FORMULARIO */
+.formulario {
+    max-width: 50%;
+    margin: 50px auto;
+    max-height: 80%;
+}
+
+label,
+input,
+textarea {
+    display: block;
+    width: 90%;
+    text-align: left;
+}
+
+input,
+textarea {
+    border: 1px solid #085B63;
+    border-radius: 3px;
+}
+
+textarea {
+    height: 150px;
+}
+
+label {
+    margin: 10px 0px 2px 0px;
+}
+
+.submit {
+    background: #2B588D;
+    color: white;
+    font-size: 1rem;
+    border-radius: 35px;
+    border: none;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    margin: 30px 0px;
+}
+
+.submit:hover {
+    background: #4DC6C5;
+}
+
+
+
+/* PIE DE PAGINA */
+footer {
+    height: 120px;
+    padding: 40px 0px;
+    background: #2B588D;
+}
+
+.fa-envelope,
+.fa-instagram,
+.fa-whatsapp {
+    font-size: 35px;
+    color: #ffffff;
+    padding: 5px 5px;
+}

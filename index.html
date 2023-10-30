@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="./estilos/estilos.css">
     <title>JSON API</title>
     <style>
         .imgDimensiones {
@@ -25,26 +25,50 @@
 </head>
 
 <body>
-    <div class="container">
-        
-        <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner" id="carouselTira">
-              
+    <header>
+        <nav class="container px-2 navbar navbar-expand-lg bg-body-tertiary">
+            <a class="navbar-brand" href="./index.html"><img class="marca img-fluid" src="./img/marca.png"
+                    alt="logo de la marca">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0 justify-content-end flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./ventas.html">Agentes de ventas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bold" aria-current="page" href="./conocenos.html">Conocenos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./faq.html">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contacto.html">Contacto</a>
+                    </li>
+                </ul>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+        </nav>
+    </header>
+    <div class="container">
+        <h2 class="text-center mt-5">Last-minute vacation deals (hotels)</h2>
+        <p class="text-center mt-5">Buscar por ciudad (en inglés) o por nombre del Alojamiento</p>
+        <div class="d-flex justify-content-center">
+            <input type="text" id="searchInput" onkeyup="search()" placeholder="ciudad, hotel (ingresa al menos 3 letras)" class="text-center w-25">
         </div>
-
-        <h3 class="mt-5">Buscar por hotel o ciudad</h3>
-        <input type="text" id="searchInput" onkeyup="search()" placeholder="ingrese 3 o más letras">
-
         <div id="cardContainer" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mt-4"></div>
+        <h6 class="mt-5 text-center fs-3">Hoteles promocionados</h6>
+        <div class="container">
+        <div id="cardContainerSmall" class="row row-cols-1 row-cols-sm-3 row-cols-md-6 g-1 mt-4"></div>
+        </div>
     </div>
 
     <script src="./javascript.js"></script>
