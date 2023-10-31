@@ -52,8 +52,10 @@ function showRandomHotels() {
     const card = `
       <div class="col">
       <div class="card h-100 border-0 position-relative" style="max-width: 200px;">
-          <img src="${hotel.imagen}" class="card-img-top rounded-4 img-fluid">
-          <div class="descuento">${hotel.descuento}</div>
+      <div class="imgSmallContenedor">
+      <img src="${hotel.imagen}" class="card-img-top rounded-4 img-fluid imgSmallDimensiones">
+      </div>     
+          <div class="descuento"><small>${hotel.descuento}</small></div>
           <div class="card-body">
             <p class="card-text fs-6"><small><strong>${hotel.puntaje}</strong> ${hotel.evaluaciones}</small></p>
             <h5 class="card-title fs-6 fw-bold"><small>${hotel.hotel}</small></h5>
