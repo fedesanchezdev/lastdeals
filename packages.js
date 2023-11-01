@@ -20,6 +20,11 @@ function showRandomPackages() {
   const randomPackages = packages.slice(0, 6);
 
   randomPackages.forEach((package) => {
+    // Convierte la cadena de precio a número utilizando parseFloat
+    const precioSinComas = package.precio.replace(/,/g, '').replace(/\$/g, '');
+    // CAMBIAR EL PROCENTUAL DE 10% ////////////////////////////////////////// MAS ABAJO TAMBIEN //////////////////////////////////////////////////
+    const precioFinal = parseInt(precioSinComas * 1.10);
+
     const card = `
       <div class="col g-3">
         <div class="card h-100 border-1 rounded-4 position-relative" style="max-width: 200px;">
@@ -34,7 +39,7 @@ function showRandomPackages() {
             </div>
             <p class="card-text mt-0 fs-6"><small>${package.origenDestino}</small></p>
             <div class="text-end">
-              <p class="card-text mb-0 pb-0 fs-6 mt-3"><strong>${package.precio}</strong></p>
+              <p class="card-text mb-0 pb-0 fs-6 mt-3"><strong>$${precioFinal}</strong></p>
               <p class="card-text mt-0 pt-0 fs-6"><small><small><small>${package.precioPersona}</small></small></small></p>
             </div>
             <p class="card-text text-center mt-3 fs-6"><small>${package.fechas}</small></p>
@@ -71,11 +76,16 @@ function searchPackages() {
   packages.forEach((package) => {
     const ciudadSinAcentos = removeAccents(package.ciudad.toLowerCase());
     const hotelSinAcentos = removeAccents(package.hotel.toLowerCase());
+    // Convierte la cadena de precio a número utilizando parseFloat
+    const precioSinComas = package.precio.replace(/,/g, '').replace(/\$/g, '');
+    // CAMBIAR EL PROCENTUAL DE 10% ////////////////////////////////////////// MAS ARRIBA TAMBIEN //////////////////////////////////////////////////
+    const precioFinal = parseInt(precioSinComas * 1.10);
 
     if (
       ciudadSinAcentos.includes(searchTerm) ||
       hotelSinAcentos.includes(searchTerm)
     ) {
+
       const card = `
         <div class="col">
           <div class="card h-100 border-1 rounded-4">
@@ -90,7 +100,7 @@ function searchPackages() {
               </div>
               <p class="card-text mt-0 fs-6">${package.origenDestino}</p>
               <div class="text-end">
-                <p class="card-text mt-5 mb-0 pb-0 lh-1 fs-4"><strong>${package.precio}</strong></p>
+                <p class="card-text mt-5 mb-0 pb-0 lh-1 fs-4"><strong>$${precioFinal}</strong></p>
                 <p class="card-text mt-0 pt-0 lh-1 fs-6">${package.precioPersona}</p>
               </div>
               <p class="card-text text-center mt-4">${package.fechas}</p>

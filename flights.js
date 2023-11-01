@@ -18,8 +18,13 @@ function showRandomFlights() {
   cardContainer.innerHTML = "";
 
   const randomFlights = flights.slice(0, 6);
-
+  
   randomFlights.forEach((flight) => {
+    // Convierte la cadena de precio a número utilizando parseFloat
+    const precioSinComas = flight.precio.replace(/,/g, '').replace(/\$/g, '');
+    // CAMBIAR EL PROCENTUAL DE 10% ////////////////////////////////////////// MAS ABAJO TAMBIEN //////////////////////////////////////////////////
+    const precioFinal = parseInt(precioSinComas * 1.10);
+
     const card = `
       <div class="col g-3">
         <div class="card h-100 border-1 rounded-4" style="max-width: 400px;">
@@ -32,7 +37,7 @@ function showRandomFlights() {
             <p class="card-text fs-6 my-0"><small>${flight.clase}</small></h5>
             <div class="d-flex justify-content-between m-0 p-0">
               <p class="card-text fs-6 m-0 p-0"><small><small>${flight.fechas}</small></small></p>
-              <p class="card-text fs-6 m-0 p-0"><small><small>from</small></small> <strong>${flight.precio}</strong></p>
+              <p class="card-text fs-6 m-0 p-0"><small><small>from</small></small> <strong>$${precioFinal}</strong></p>
             </div>
             <div class="text-end m-0 p-0">
               <p class="card-text fs-6 m-0 p-0"><small><small>${flight.porPersona}</small></small></p>
@@ -69,7 +74,11 @@ function searchFlights() {
   flights.forEach((flight) => {
     const ciudadOrigenSinAcentos = removeAccents(flight.ciudadOrigen.toLowerCase());
     const ciudadDestinoSinAcentos = removeAccents(flight.ciudadDestino.toLowerCase());
-    
+    // Convierte la cadena de precio a número utilizando parseFloat
+    const precioSinComas = flight.precio.replace(/,/g, '').replace(/\$/g, '');
+    // CAMBIAR EL PROCENTUAL DE 10% ////////////////////////////////////////// MAS ARRIBA TAMBIEN //////////////////////////////////////////////////
+    const precioFinal = parseInt(precioSinComas * 1.10);
+
     if (
       ciudadOrigenSinAcentos.includes(searchTerm) ||
       ciudadDestinoSinAcentos.includes(searchTerm)
@@ -86,7 +95,7 @@ function searchFlights() {
               <p class="card-text fs-6 my-0"><small>${flight.clase}</small></h5>
               <div class="d-flex justify-content-between m-0 p-0">
                 <p class="card-text fs-6 m-0 p-0"><small><small>${flight.fechas}</small></small></p>
-                <p class="card-text fs-6 m-0 p-0"><small><small>from</small></small> <strong>${flight.precio}</strong></p>
+                <p class="card-text fs-6 m-0 p-0"><small><small>from</small></small> <strong>${precioFinal}</strong></p>
               </div>
               <div class="text-end m-0 p-0">
                 <p class="card-text fs-6 m-0 p-0"><small><small>${flight.porPersona}</small></small></p>

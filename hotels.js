@@ -159,3 +159,4 @@ function copyCardText(button) {
     console.error('El API Clipboard no está soportado en este navegador.');
   }
 }
+
