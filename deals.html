@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Viajes por todo el mundo. Itinerarios. Presupuestos. Disney. Universal. Caribe. Agencia de viajes." />
+    <meta name="keywords" content="Agencia de viajes. Disney. Orlando. Universal. All Inclusive. Caribe. Viajar." />
+    <link rel="shortcut icon" type="image/png" href="./favicon/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/estilos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@500;700;800;900&family=Montserrat:wght@300;400;500;600;800&family=Ms+Madi&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8c56a75169.js" crossorigin="anonymous"></script>
+    <script src="./script/script.js"></script>
+    <title>DIY Travel Group : Agencia de Viajes</title>
+    <style>
+        .imgDimensiones {
+            height: 220px;
+        }
+
+        .imgSmallDimensiones {
+            height: 140px;
+        }
+
+        .descuento {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: fit-content;
+            max-width: 80%;
+            background-color:gold;
+            padding: 2px 3px;
+            border-radius: 3px;
+        }
+
+        .logoAerolinea {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="container px-2 navbar navbar-expand-lg bg-body-tertiary">
+            <a class="navbar-brand" href="./index.html"><img class="marca img-fluid" src="./img/marca.png"
+                    alt="logo de la marca">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0 justify-content-end flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./ventas.html">Agentes de ventas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bold" aria-current="page" href="./conocenos.html">Conocenos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./faq.html">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        
+        <h2 class="text-center mt-5 fs-4">Ofertas de último momento - Hoteles - Aéreos - Paquetes</h2>
+        <p class="fs-6 text-center"><small>Actualizado el 30/10/24</small></p>
+        <p class="text-center mt-5">Buscar por ciudad (en inglés) o por nombre del alojamiento</p>
+        <!-- ACTUALIZAR FECHA -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <input type="text" id="searchInputHotels" onkeyup="searchHoteles()" placeholder="Hoteles por ciudad o alojamiento" class="text-center w-100 mb-2">
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <input type="text" id="searchInputFlights" onkeyup="searchFlights()" placeholder="Aéreos por ciudad de origen o destino" class="text-center w-100 mb-2">
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <input type="text" id="searchInputPackages" onkeyup="searchPackages()" placeholder="Paquetes por ciudad o alojamiento" class="text-center w-100 mb-2">
+                </div>
+            </div>
+        </div>
+            
+        
+        <div id="cardContainer" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mt-4"></div>
+        <div class="container">
+            <h6 class="mt-5 text-center fs-3">Alojamientos que podrían interesarte:</h6>
+            <div id="cardContainerSmallHotels" class="row row-cols-1 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-1 mt-4"></div>
+
+            <h6 class="mt-5 text-center fs-3">Aéreos que podrían interesarte:</h6>
+            <div id="cardContainerSmallFlights" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-1 mt-4"></div>
+
+            <h6 class="mt-5 text-center fs-3">Paquetes que podrían interesarte:</h6>
+            <div id="cardContainerSmallPackages" class="row row-cols-1 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-1 mt-4"></div>
+        </div>
+    </div>
+
+    <footer class="container-fluid text-center mt-5">
+        <a href="https://web.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/diytravelgroup/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:info@diytravelgroup.com"><i class="far fa-envelope"></i></a>
+    </footer>
+
+    <script src="./hotels.js"></script>
+    <script src="./flights.js"></script>
+    <script src="./packages.js"></script>
+
+
+</body>
+
+</html>
