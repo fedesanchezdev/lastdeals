@@ -1,6 +1,6 @@
 let flights = [];
 
-fetch("./flights_json.json")
+fetch("https://fedesanchezdev.github.io/lastdeals/flights_json.json")
   .then((res) => res.json())
   .then((data) => {
     flights = data;
@@ -20,9 +20,7 @@ function showRandomFlights() {
   const randomFlights = flights.slice(0, 6);
   
   randomFlights.forEach((flight) => {
-    // Convierte la cadena de precio a número utilizando parseFloat
     const precioSinComas = flight.precio.replace(/,/g, '').replace(/\$/g, '');
-    // CAMBIAR EL PROCENTUAL DE 10% ////////////////////////////////////////// MAS ABAJO TAMBIEN //////////////////////////////////////////////////
     const precioFinal = parseInt(precioSinComas * 1.10);
 
     const card = `
@@ -74,9 +72,7 @@ function searchFlights() {
   flights.forEach((flight) => {
     const ciudadOrigenSinAcentos = removeAccents(flight.ciudadOrigen.toLowerCase());
     const ciudadDestinoSinAcentos = removeAccents(flight.ciudadDestino.toLowerCase());
-    // Convierte la cadena de precio a número utilizando parseFloat
     const precioSinComas = flight.precio.replace(/,/g, '').replace(/\$/g, '');
-    // CAMBIAR EL PROCENTUAL DE 10% ////////////////////////////////////////// MAS ARRIBA TAMBIEN //////////////////////////////////////////////////
     const precioFinal = parseInt(precioSinComas * 1.10);
 
     if (
