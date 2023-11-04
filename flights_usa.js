@@ -1,6 +1,6 @@
 let flights = [];
 
-fetch("https://fedesanchezdev.github.io/lastdeals/flights_json.json")
+fetch("vuelos_usa.json")
   .then((res) => res.json())
   .then((data) => {
     flights = data;
@@ -91,7 +91,7 @@ function searchFlights() {
               <p class="card-text fs-6 my-0"><small>${flight.clase}</small></h5>
               <div class="d-flex justify-content-between m-0 p-0">
                 <p class="card-text fs-6 m-0 p-0"><small><small>${flight.fechas}</small></small></p>
-                <p class="card-text fs-6 m-0 p-0"><small><small>from</small></small> <strong>${precioFinal}</strong></p>
+                <p class="card-text fs-6 m-0 p-0"><small><small>from</small></small> <strong>$${precioFinal}</strong></p>
               </div>
               <div class="text-end m-0 p-0">
                 <p class="card-text fs-6 m-0 p-0"><small><small>${flight.porPersona}</small></small></p>

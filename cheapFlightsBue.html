@@ -39,10 +39,11 @@
             border-radius: 3px;
         }
 
-        .logoAerolinea {
-            width: 20px;
-            height: 20px;
-        }
+        .center-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+}
 
         .textoOculto {
             white-space: nowrap;
@@ -87,35 +88,29 @@
         </nav>
     </header>
     <div class="container">
-        <h2 class="text-center mt-5 fs-4">Ofertas de último momento - Hoteles - Aéreos - Paquetes</h2>
-        <p class="fs-6 text-center"><small>Actualizado el 02/11/23</small></p>
-        <p class="text-center mt-2">Buscar por ciudad (en inglés) o por nombre del alojamiento</p>
+        <h2 class="text-center mt-5 fs-4">Vuelos en oferta saliendo desde Buenos Aires</h2>
+        <p class="fs-6 text-center"><small>Actualizado el 04/11/23</small></p>
+        
         <!-- ACTUALIZAR FECHA -->
         <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-lg-4">
+            <div class="row d-flex justify-content-center">
+                <!-- <div class="col-md-6 col-lg-4">
                     <input type="text" id="searchInputHotels" onkeyup="searchHoteles()" placeholder="Hoteles por ciudad o alojamiento" class="text-center w-100 mb-2">
+                </div> -->
+                <div class="col col-md-6">
+                    <input type="text" id="searchInputFlights" onkeyup="searchFlights()" placeholder="Buscar por ciudad de destino (en inglés) o código de aeropuerto." class="text-center w-100 mb-2">
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <input type="text" id="searchInputFlights" onkeyup="searchFlights()" placeholder="Aéreos por ciudad de origen o destino" class="text-center w-100 mb-2">
-                </div>
-                <div class="col-md-6 col-lg-4">
+                <!-- <div class="col-md-6 col-lg-4">
                     <input type="text" id="searchInputPackages" onkeyup="searchPackages()" placeholder="Paquetes por ciudad o alojamiento" class="text-center w-100 mb-2">
-                </div>
+                </div> -->
             </div>
         </div>
             
         
         <div id="cardContainer" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mt-4"></div>
         <div class="container">
-            <h6 class="mt-5 text-center fs-3">Alojamientos que podrían interesarte:</h6>
-            <div id="cardContainerSmallHotels" class="row row-cols-1 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-1 mt-1"></div>
-
             <h6 class="mt-5 text-center fs-3">Aéreos que podrían interesarte:</h6>
             <div id="cardContainerSmallFlights" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-1 mt-1"></div>
-
-            <h6 class="mt-5 text-center fs-3">Paquetes que podrían interesarte:</h6>
-            <div id="cardContainerSmallPackages" class="row row-cols-1 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-1 mt-1"></div>
         </div>
     </div>
 
@@ -125,9 +120,7 @@
         <a href="mailto:info@diytravelgroup.com"><i class="far fa-envelope"></i></a>
     </footer>
 
-    <script src="./hotels.js"></script>
-    <script src="./flights_usa.js"></script>
-    <script src="./packages.js"></script>
+    <script src="./cheapFlightsBue.js"></script>
 
 
 </body>

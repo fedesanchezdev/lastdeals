@@ -31,7 +31,7 @@ function showRandomHotels() {
       <div class="col g-3">
         <div class="card h-100 border-1 rounded-4 position-relative" style="max-width: 200px;">
           <img src="${hotel.imagen}" class="card-img-top rounded-4 rounded-bottom-0 img-fluid imgSmallDimensiones" alt="Imagen no disponible">     
-          <div class="descuento">
+          <div class="descuento textoOculto text-center">
             <small>${hotel.descuento}</small>
           </div>
           <div class="card-body">
